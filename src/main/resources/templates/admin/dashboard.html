@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <meta charset="UTF-8">
+    <title>Member Portal</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <style type="text/css">
+     
+     body{
+     	background-color:  #0b0e1ae8;	
+     	}
+     	.navbar{
+     		background-color: #2b71c2b3;
+     	}
+     	.navbar-brand{
+     		font-size: 200%;
+     		font-family: Times New Roman;
+     		color:white;
+     	}
+     	.nav-link{
+     		font-size:150%;
+     		color: white;
+     	}
+     	.nav-link{
+     		text-align: right;
+     	}
+     	
+	.homeback h1{
+		color: white;
+		padding-top: 10vh;
+		font-size:700%;
+		text-align: center;
+	}
+	.homeback p{
+	color: white;
+	text-align: center;
+	font-size:150%;
+	}
+	.homeback h3{
+	color: white;
+	text-align: center;
+	font-size:300%;
+	}
+	.cardhead{
+		width:100%;
+		padding: 10%;
+	}
+	.card{
+		background-color: #2b71c2b3;
+		color: white;
+	}
+	.card-header{
+		font-size: 200%;
+	}
+	.card-text{
+		font-size: 115%;
+	}
+	.card-more{
+		text-align: center;
+		font-size: 115%;
+	}
+	.dashhead{
+		background-color:  #2b71c2b3;
+		width: 100%;
+		height: 40%;
+		color: white;
+	}
+	.cardtt{
+		color: white;
+		font-size:130%;
+	}
+	a:hover{
+		color:#0311d6e8;
+	}
+     </style>    
+       
+       
+</head>
+<body>
+        
+   <p sec:authorize="hasRole('ADMIN')">      
+        
+       <nav class="navbar">
+        <!-- Brand -->
+        <a class="navbar-brand" th:href="@{/admin/dashboard}" >THE CHURCH</a>
+      
+      
+        <!-- Navbar links -->
+       
+          <ul class="nav">
+            <li class="nav-item">
+        <a class="nav-link" th:href="@{/admin/dashboard}" >Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/adimage}" >Events</a>
+      </li>
+                <li class="nav-item">
+              <a class="nav-link" th:href="@{|/admin/drill|}" th:text="'Drill'">Test</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/mymems?keyword=001|}" th:text="'My Profile'">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/admpublicnotes|}" th:text="'Annoucement'">My Profile</a>
+            </li>
+            <li class="nav-item">
+        <a class="nav-link active" th:href="@{/mydonors/new}" th:text="'Seed'">Seed</a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link active" th:href="@{/logout}" >Logout</a>
+      </li>
+          </ul>
+      </nav>
+      
+      
+      
+       <div class="cardhead">
+      <div class="card text-bg-primary mb-3">
+  <div class="card-header">Welcome</div>
+  <div class="card-body">
+    <p class="card-text">You are welcome to THE CHURCH</p>
+     <div sec:authorize="isAuthenticated()">
+    <p>You are logged in as: <span sec:authentication="name"></span></p>
+   
+  </div>
+  </div>
+</div>
+<div class="card text-bg-info mb-3">
+  <div class="card-header">Cell Meeting</div>
+  <div class="card-body">
+    <p class="card-text">Endeavor to attend your cell meeting every Saturday from 5pm - 6pm</p>
+  </div>
+</div>
+
+ <div class="card text-bg-info mb-3">
+  <div class="card-header">Ongoing Registrations</div>
+  <div class="card-body">
+    <p class="card-more">
+    IPPC<br>
+    ICLC<br>
+    Festival Of Music<br>
+    Skill Empowerment<br>
+    Foundation School<br>
+    <br>
+    
+    Visit the Admin Office for more inquiry
+    </p>
+  </div>
+</div>
+</div>
+
+
+
+<div class="card text-center">
+  <div class="card-header">
+   <h4>Announcement</h4>
+  </div>
+  <div class="card-body">
+    <h5>For updated information, always check the announcement page</h5>
+  
+    <a th:href="@{|/admpublicnotes|}" class="btn btn-primary">Click for more details</a><br><br>
+   
+  </div>
+  
+</div>
+
+</body>
+</html>

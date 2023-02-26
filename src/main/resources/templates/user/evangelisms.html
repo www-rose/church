@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Staff Portal seed</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <style type="text/css">
+.navbar{
+     		background-color: #2b71c2b3;
+     	}
+     	.navbar-brand{
+     		font-size: 200%;
+     		font-family: Times New Roman;
+     		color:white;
+     	}
+     	navbar-nav{
+     		text-align: left;
+     	}
+     	.navbar{
+     		width:1750px;
+     	}
+     	body{
+     		width: 1750px;
+     	}
+     	.nav-link{
+     		font-size:150%;
+     		color: white;
+     		text-align: left;
+     	}
+     	a{
+     		color: black;
+     	}
+     	a:hover{
+		color:#0311d6e8;
+	}
+	.thead{
+		background-color: #2b71c2b3;
+		text-align: center;
+	}
+	.thead a{
+		color: white;
+	}
+	table{
+		width:100%;
+	}
+	.navhead{
+		background-color: #2b71c2b3;
+		width:125%;
+	}
+	.cont{
+		padding: 5%;
+		padding-left:3%;
+	}
+	.btn{
+		color: white;
+	}
+	.fulfil{
+		font-weight: bold;
+		font-size:200%;
+		text-align: center;
+	}
+	
+    </style> 	
+</head>
+<body>
+
+
+ <nav class="navbar">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">THE CHURCH</a>
+      
+      
+        <!-- Navbar links -->
+       
+          <ul class="nav">
+            <li class="nav-item">
+        <a class="nav-link" th:href="@{/dashboard}" >Home</a>
+      </li>
+      <form class="d-flex" role="search" th:action="@{/evangelisms}" name="keyword">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword" th:value="${keyword}" required />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+            <li class="nav-item">
+        <a class="nav-link active" th:href="@{/logout}" >Logout</a>
+      </li>
+          </ul>
+      </nav>
+      
+
+	<div class = "cont">
+		<div class = "row">
+			<h1>Sow your seed in the morning, and at evening let your hands not be idle, for you do not<br>
+			 know which will succeed, whether this or that, or whether both will do equally well.</h1>
+		</div>
+		
+		<div class = "row">
+			<div class = "col-lg-3">
+				<a th:href ="@{/evangelisms/new}" class = "btn btn-primary btn-sm mb-3">Sow your seed</a>
+			</div>
+		</div>
+		
+		<table class = "table table-bordered table-striped">
+			<thead class = "thead">
+				<tr>
+					<th scope="col">First Name</th>
+					<th scope="col">Last Name</th>
+					<th scope="col">Address</th>
+					<th scope="col">Mobile No</th>
+					<th scope="col">email</th>
+					<th scope="col">Fellowship</th>
+					<th scope="col">Cells</th>
+					<th scope="col">Department</th>
+					<th scope="col">Date Of Birth</th>
+					<th scope="col">Seed Name</th>
+					<th scope="col">Date of Remittance</th>
+					<th scope="col">Amount</th>
+					<th scope="col">Occupation</th>
+					<th scope="col">Prayer Request</th>
+					<th scope="col">Fufilled(Yes/No)</th>
+					<th scope="col">Actions</th>
+					
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each = "evangelism: ${listEvangelisms}">
+					<td th:text = "${evangelism.rollNo}"></td>
+					<td th:text = "${evangelism.s1}"></td>
+					<td th:text = "${evangelism.s2}"></td>
+					<td th:text = "${evangelism.s3}"></td>
+					<td th:text = "${evangelism.s4}"></td>
+					<td th:text = "${evangelism.s5}"></td>
+					<td th:text = "${evangelism.s6}"></td>
+					<td th:text = "${evangelism.s7}"></td>
+					<td th:text = "${evangelism.s8}"></td>
+					<td th:text = "${evangelism.s9}"></td>
+					<td th:text = "${evangelism.s10}"></td>
+					<td th:text = "${evangelism.s11}"></td>
+					<td th:text = "${evangelism.s12}"></td>
+					<td th:text = "${evangelism.s13}"></td>
+					<td th:text = "${evangelism.s14}" class="fulfil"></td>
+					<td>
+						<a th:href = "@{/evangelisms/edit/{id}(id=${evangelism.id})}" 
+						class = "btn btn-primary">Update</a><br><br>
+						
+						<a th:href = "@{/evangelisms/{id}(id=${evangelism.id})}" 
+						class = "btn btn-danger">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+</body>
+</html>

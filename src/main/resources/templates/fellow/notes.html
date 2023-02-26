@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Fellowship Announcement</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <style type="text/css">
+     
+     body{
+  background-color: black;
+	}
+.navbar{
+     		background-color: #2b71c2b3;
+     	}
+     	.navbar-brand{
+     		font-size: 200%;
+     		font-family: Times New Roman;
+     		color:white;
+     	}
+     	navbar-nav{
+     		text-align: left;
+     	}
+     	.navbar{
+     		width:100%;
+     	}
+     	.nav-link{
+     		font-size:150%;
+     		color: white;
+     		text-align: left;
+     	}
+     	a{
+     		color: black;
+     	}
+     	a:hover{
+		color:#0311d6e8;
+	}
+	.thead{
+		background-color: #2b71c2b3;
+		text-align: center;
+	}
+	.thead a{
+		color: white;
+	}
+	table{
+		width:100%;
+	}
+	.navhead{
+		background-color: #2b71c2b3;
+		width:125%;
+	}
+	.cont{
+		padding: 5%;
+	}
+	.btn{
+		color: white;
+	}
+	.row h1{
+		color: white;
+		text-align: center;
+	}
+	.wholecard{
+		padding-bottom: 10%;
+	}
+	.card{
+		background-color: #2b71c2b3;
+		color: white;
+		margin-bottom: 10%;
+	}
+	
+    </style> 	
+</head>
+<body>
+
+
+ <nav class="navbar">
+        <!-- Brand -->
+        <a class="navbar-brand" th:href="@{/dashboard}" >THE CHURCH</a>
+      
+      
+        <!-- Navbar links -->
+       
+          <ul class="nav">
+            <li class="nav-item">
+        <a class="nav-link" th:href="@{/dashboard}" >Home</a>
+      </li>
+      
+            <li class="nav-item">
+        <a class="nav-link active" th:href="@{/logout}" >Logout</a>
+      </li>
+          </ul>
+      </nav>
+      
+
+	<div class = "cont">
+		<div class = "row">
+			<h1>Notice Board For Pastoral Assistants, Admin Staffs and Fellowship Leaders</h1>
+		</div>
+		
+		
+
+		<div class="card text-center" th:each = "note: ${listNotes}">
+  <div class="card-header">
+   <h4 th:text = "${note.rollNo}"></h4>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title" th:text = "${note.s1}"></h5>
+    <p class="card-text" th:text = "${note.s2}"></p>
+    
+    <p class="card-text" th:text = "${note.s5}"></p>
+      <p class="card-text" th:text = "${note.s7}"></p>
+    <p class="card-text" th:text = "${note.s6}"></p>
+  
+    <a href="#" class="btn btn-primary" th:text = "${note.s3}"></a><br><br>
+    
+    
+  </div>
+  <div class="card-footer text-muted">
+    <h4 th:text = "${note.s4}"></h4>
+  </div>
+</div>
+
+
+
+</body>
+</html>

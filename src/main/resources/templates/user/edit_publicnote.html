@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Notice Board Admin</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Notice Board</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/evangelisms}" >Notice Board</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>	
+	
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<p class = "text-center"> Notice Board For Everyone</p>
+				<div class = "card-body">
+					<form th:action="@{/publicnotes/{id} (id=${notem.id})}" th:object = "${notem}" method="post">
+						
+							<div class ="form-group">
+   							<label>Heading for the Notice</label>
+    <input type="text" class="form-control" placeholder="Notice Title" name = "S8" th:field = "*{S8}" />
+    						 </div><br>
+    						 
+    						 <div class ="form-group">
+   							<label>Message</label>
+    <input type="text" class="form-control" placeholder="" name = "S9" th:field = "*{S9}" />
+    						 </div><br>
+    						 
+    						 
+    						 
+    						 
+    						 <div class ="form-group">
+   							<label>Meeting Starts</label>
+    <input type="text" class="form-control" placeholder="Meeting Start Time" name = "S10" th:field = "*{S10}" />
+    						 </div><br>
+    						 
+    						 
+    						 
+    						  <div class ="form-group">
+   							<label>To</label>
+    <input type="text" class="form-control" placeholder="To/May End" name = "S11" th:field = "*{S11}" />
+    						 </div><br>
+    						 
+    						 
+    						 <div class ="form-group">
+   							<label>Meeting Ends</label>
+    <input type="text" class="form-control" placeholder="Meeting End Time" name = "S12" th:field = "*{S12}" />
+    						 </div><br>
+    						 
+    						 
+    						 
+    						 <div class ="form-group">
+   							<label>Link Title</label>
+    <input type="text" class="form-control" placeholder="" name = "S13" th:field = "*{S13}" />
+    						 </div><br>
+    						 
+    						 <div class ="form-group">
+   							<label>Date Posted</label>
+    <input type="text" class="form-control" placeholder="" name = "S14" th:field = "*{S14}" />
+    						 </div><br>
+    						 
+    						 
+    						 
+    	
+						<div class = "footer-body">
+						<button type = "submit" class = "btn btn-primary">
+						Submit
+						</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

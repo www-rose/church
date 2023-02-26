@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Management System</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <style type="text/css">
+.navbar{
+     		background-color: #2b71c2b3;
+     	}
+     	.navbar-brand{
+     		font-size: 200%;
+     		font-family: Times New Roman;
+     		color:white;
+     	}
+     	navbar-nav{
+     		text-align: left;
+     	}
+     	.navbar{
+     		width:2800px;
+     	}
+     	.nav-link{
+     		font-size:150%;
+     		color: white;
+     		text-align: left;
+     	}
+     	a{
+     		color: black;
+     	}
+     	a:hover{
+		color:#0311d6e8;
+	}
+	.thead{
+		background-color: #2b71c2b3;
+		text-align: center;
+	}
+	.thead a{
+		color: white;
+	}
+	table{
+		width:100%;
+	}
+	.navhead{
+		background-color: #2b71c2b3;
+		width:125%;
+	}
+	.cont{
+		padding: 5%;
+	}
+	.btn{
+		color: white;
+	}
+	
+    </style> 	
+</head>
+<body>
+
+
+ <nav class="navbar">
+        <!-- Brand -->
+        <a class="navbar-brand" th:href="@{/dashboard}" >THE CHURCH</a>
+      
+      
+        <!-- Navbar links -->
+       
+          <ul class="nav">
+            <li class="nav-item">
+        <a class="nav-link" th:href="@{/dashboard}" >Home</a>
+      </li>
+       <form class="d-flex" role="search" th:action="@{/questions}" name="keyword">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword" th:value="${keyword}" required />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+            <li class="nav-item">
+        <a class="nav-link active" th:href="@{/logout}" >Logout</a>
+      </li>
+          </ul>
+      </nav>
+      
+
+	<div class = "cont">
+		<div class = "row">
+			<h1>Record Board</h1>
+		</div>
+		
+		<div class = "row">
+			<div class = "col-lg-3">
+				<a th:href ="@{/questions/new}" class = "btn btn-primary btn-sm mb-3">Add Record</a>
+			</div>
+		</div>
+		
+		<table class = "table table-bordered table-striped">
+			<thead class = "thead">
+				<tr>
+					<th scope="col">Record Title</th>
+					<th scope="col" colspan="5">MAKARIOS</th>
+					<th scope="col" colspan="2">ZOE</th>
+					<th scope="col" colspan="3">LORDS AND KINGS</th>
+					<th scope="col" colspan="2">ROYAL DIADEM</th>
+					<th scope="col" colspan="4">TEEN CHURCH</th>
+					<th scope="col" colspan="4">PACESETTERS</th>
+					<th scope="col" colspan="4">FAITH WALKERS</th>
+					<th scope="col" colspan="1">PEARLS</th>
+					<th scope="col" colspan="1">HAVEN</th>
+					<th scope="col" colspan="1">Insight for men</th>
+					<th scope="col" colspan="1">Kingdom Addict</th>
+				</tr>
+				<tr>
+					<th scope="col"></th>
+					<th scope="col">Ambassador</th>
+					<th scope="col">Heritage</th>
+					<th scope="col">LivingStone</th>
+					<th scope="col">Shekinah</th>
+					<th scope="col">Soul Lifters</th>
+					<th scope="col">Royal Kings</th>
+					<th scope="col">Oasis Of Grace</th>
+					<th scope="col">Rhema</th>
+					<th scope="col">Awakers</th>
+					<th scope="col">Winners</th>
+					<th scope="col">Perfect Women</th>
+					<th scope="col">Champion</th>
+					<th scope="col">Flourish</th>
+					<th scope="col">Perfection</th>
+					<th scope="col">Triumphant</th>
+					<th scope="col">HarvestField</th>
+					<th scope="col">Trailblazer</th>
+					<th scope="col">Dominion</th>
+					<th scope="col">Prestige</th>
+					<th scope="col">Royal Cell</th>
+					<th scope="col">Professional</th>
+					<th scope="col">Love Cell</th>
+					<th scope="col">Fortress</th>
+					<th scope="col">Grace Arena</th>
+					<th scope="col">Prevail</th>
+					<th scope="col">Haven</th>
+					<th scope="col">I.F.M</th>
+					<th scope="col">kingdom Addict</th>
+					<th scope="col">Actions</th>
+					
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each = "question: ${listQuestions}">
+					<td th:text = "${question.rollNo}"></td>
+					<td th:text = "${question.s1}"></td>
+					<td th:text = "${question.s2}"></td>
+					<td th:text = "${question.s3}"></td>
+					<td th:text = "${question.s4}"></td>
+					<td th:text = "${question.s5}"></td>
+					<td th:text = "${question.s6}"></td>
+					<td th:text = "${question.s7}"></td>
+					<td th:text = "${question.s8}"></td>
+					<td th:text = "${question.s9}"></td>
+					<td th:text = "${question.s10}"></td>
+					<td th:text = "${question.s11}"></td>
+					<td th:text = "${question.s12}"></td>
+					<td th:text = "${question.s13}"></td>
+					<td th:text = "${question.s14}"></td>
+					<td th:text = "${question.s15}"></td>
+					<td th:text = "${question.s16}"></td>
+					<td th:text = "${question.s17}"></td>
+					<td th:text = "${question.s18}"></td>
+					<td th:text = "${question.s19}"></td>
+					<td th:text = "${question.s20}"></td>
+					<td th:text = "${question.s21}"></td>
+					<td th:text = "${question.s22}"></td>
+					<td th:text = "${question.s23}"></td>
+					<td th:text = "${question.s24}"></td>
+					<td th:text = "${question.s25}"></td>
+					<td th:text = "${question.s26}"></td>
+					<td th:text = "${question.s27}"></td>
+					<td th:text = "${question.s28}"></td>
+					<td>
+						<a th:href = "@{/questions/edit/{id}(id=${question.id})}" 
+						class = "btn btn-primary">Update</a><br><br>
+						
+						<a th:href = "@{/questions/{id}(id=${question.id})}" 
+						class = "btn btn-danger">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+</body>
+</html>

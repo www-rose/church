@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Staff Management System</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Staff Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/members}" >Record Management</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"> Update Record </h1>
+				<div class = "card-body">
+					<form th:action="@{/questions/{id} (id=${question.id})}" th:object = "${question}" method="post">
+						<div class ="form-group">
+							<label>Record Title</label>
+							<input
+								type = "text"
+								name = "RollNo"
+								th:field = "*{RollNo}"
+								class = "form-control"
+								placeholder= "Enter Record Title"
+							/>
+							</div><br>
+							
+							
+							<div class ="form-group">
+							<label> MAKARIOUS FELLOWSHIP</label>
+							
+							
+	<div class="row">
+   		<div class="col">
+      		Ambassador<input type="text" class="form-control" placeholder="" name = "S1" th:field = "*{S1}" />
+    	</div>
+    	<div class="col">
+      		Heritage<input type="text" class="form-control" placeholder="" name = "S2" th:field = "*{S2}" />
+    	</div>
+    	<div class="col">
+      		L.Stone<input type="text" class="form-control" placeholder="" name = "S3" th:field = "*{S3}" />
+    	</div>
+    	<div class="col">
+      		Shekinah<input type="text" class="form-control" placeholder="" name = "S4" th:field = "*{S4}" />
+    	</div>
+    	<div class="col">
+      		Soul Lifters<input type="text" class="form-control" placeholder="" name = "S5" th:field = "*{S5}" />
+    	</div>
+  	</div><br><br>
+  							</div>
+  							
+  							
+  							<div class ="form-group">
+							<label>ZOE</label>
+	<div class="row">
+   		<div class="col">
+      		Royal Kings<input type="text" class="form-control" placeholder="" name = "S6" th:field = "*{S6}" />
+    	</div>
+    	<div class="col">
+      		Oasis Of Grace<input type="text" class="form-control" placeholder="" name = "S7" th:field = "*{S7}" />
+    	</div>
+  	</div>
+  							</div><br><br>
+  							
+  							
+  							<div class ="form-group">
+							<label> LORDS AND KINGS</label>
+	<div class="row">
+   		<div class="col">
+      		Rhema<input type="text" class="form-control" placeholder="" name = "S8" th:field = "*{S8}" />
+    	</div>
+    	<div class="col">
+      		Awakers<input type="text" class="form-control" placeholder="" name = "S9" th:field = "*{S9}" />
+    	</div>
+    	<div class="col">
+      		Winners<input type="text" class="form-control" placeholder="" name = "S10" th:field = "*{S10}" />
+    	</div>
+  	</div>
+  							</div><br><br>
+  							
+  							
+  							<div class ="form-group">
+							<label> ROYAL DIADEM</label>
+	<div class="row">
+   		<div class="col">
+      		Perfect Women<input type="text" class="form-control" placeholder="" name = "S11" th:field = "*{S11}" />
+    	</div>
+    	<div class="col">
+      		Champion<input type="text" class="form-control" placeholder="" name = "S12" th:field = "*{S12}" />
+    	</div>
+  	</div>
+  							</div><br><br>
+  							
+  							
+  							<div class ="form-group">
+							<label> TEENS CHURCH</label>
+	<div class="row">
+   		<div class="col">
+      		Flourish<input type="text" class="form-control" placeholder="" name = "S13" th:field = "*{S13}" />
+    	</div>
+    	<div class="col">
+      		Perfection<input type="text" class="form-control" placeholder="" name = "S14" th:field = "*{S14}" />
+    	</div>
+    	<div class="col">
+      		Triumphant<input type="text" class="form-control" placeholder="" name = "S15" th:field = "*{S15}" />
+    	</div>
+    	<div class="col">
+      		H.Field<input type="text" class="form-control" placeholder="" name = "S16" th:field = "*{S16}" />
+    	</div>
+  	</div>
+  							</div><br><br>
+  							
+  							
+  							<div class ="form-group">
+							<label> PACESETTERS</label>
+	<div class="row">
+   		<div class="col">
+      		Trailblazer<input type="text" class="form-control" placeholder="" name = "S17" th:field = "*{S17}" />
+    	</div>
+    	<div class="col">
+      		Dominion<input type="text" class="form-control" placeholder="" name = "S18" th:field = "*{S18}" />
+    	</div>
+    	<div class="col">
+      		Prestige<input type="text" class="form-control" placeholder="" name = "S19" th:field = "*{S19}" />
+    	</div>
+    	<div class="col">
+      		Royal Cell<input type="text" class="form-control" placeholder="" name = "S20" th:field = "*{S20}" />
+    	</div>
+  	</div>
+  							</div><br><br>
+  							
+  							
+  							<div class ="form-group">
+							<label> FAITH WALKERS</label>
+	<div class="row">
+   		<div class="col">
+      		Professional<input type="text" class="form-control" placeholder="" name = "S21" th:field = "*{S21}" />
+    	</div>
+    	<div class="col">
+      		Love Cell<input type="text" class="form-control" placeholder="" name = "S22" th:field = "*{S22}" />
+    	</div>
+    	<div class="col">
+      		Fortress<input type="text" class="form-control" placeholder="" name = "S23" th:field = "*{S23}" />
+    	</div>
+    	<div class="col">
+      		G.Arena<input type="text" class="form-control" placeholder="" name = "S24" th:field = "*{S24}" />
+    	</div>
+  	</div>
+  							</div><br><br>
+  							
+  							
+  							<div class ="form-group">
+							<label> PEARLS</label>
+	<div class="row">
+   		<div class="col">
+      		Prevail<input type="text" class="form-control" placeholder="" name = "S25" th:field = "*{S25}" />
+    	</div>
+  	</div>
+  							</div><br><br>
+							
+							
+							
+							<div class ="form-group">
+							<label> HAVEN</label>
+	<div class="row">
+   		<div class="col">
+      		<input type="text" class="form-control" placeholder="" name = "S26" th:field = "*{S26}" />
+    	</div>
+  	</div>
+  							</div><br><br>
+  							
+  							
+  							
+  							<div class ="form-group">
+							<label> Insight For Men</label>
+	<div class="row">
+   		<div class="col">
+      		<input type="text" class="form-control" placeholder="" name = "S27" th:field = "*{S27}" />
+    	</div>
+  	</div>
+  							</div><br><br>
+  							
+  							
+  							<div class ="form-group">
+							<label> KIGDOM ADDICT</label>
+	<div class="row">
+   		<div class="col">
+      		<input type="text" class="form-control" placeholder="" name = "S28" th:field = "*{S28}" />
+    	</div>
+  	</div>
+  							</div><br><br>
+  							
+  							
+  							
+						
+						<div class = "footer-body">
+						<button type = "submit" class = "btn btn-primary">
+						Submit
+						</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

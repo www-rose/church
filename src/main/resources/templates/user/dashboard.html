@@ -1,0 +1,161 @@
+<!--homepage.html-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <meta charset="UTF-8">
+    <title>Admin Portal</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <style type="text/css">
+     
+     body{
+     		
+     	}
+     	.navbar{
+     		background-color: #2b71c2b3;
+     	}
+     	.offcanvas{
+     		background-color: #2b71c2b3;
+     	}
+     	.navbar-brand{
+     		font-size: 200%;
+     		font-family: Times New Roman;
+     		color:white;
+     	}
+     	 a{
+     		color: white;
+     	}
+     	.nav-link{
+     		font-size:150%;
+     		color: white;
+     	}
+     	.nav-link{
+     		text-align: right;
+     	}
+     	body{
+    height: 100vh;
+    background-image:linear-gradient(hsla(233, 34%, 51%, 0.096), hsla(233, 34%, 51%, 0.096)),url('images/admin2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+	}
+	.homeback h1{
+		color: white;
+		padding-top: 35vh;
+		font-size:700%;
+		text-align: center;
+	}
+	.homeback p{
+	color: white;
+	text-align: center;
+	font-size:150%;
+	}
+	.homeback h3{
+	color: white;
+	text-align: center;
+	font-size:300%;
+	}
+	a:hover{
+		color: white;
+	}
+	.navbar-toggler{
+		color:white;
+	}
+	button{
+		color:white;
+	}
+     </style>    
+       
+       
+</head>
+<body>
+        
+   <p sec:authorize="hasRole('USER')"> 
+   
+   
+   
+   <nav class="navbar navbar-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">THE CHURCH</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">THE CHURCH</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" th:href="@{/dashboard}" >Home</a>
+          </li>
+             <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Arms
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+              <li><a class="dropdown-item" th:href="@{|/questions?keyword=Rhapsody|}" th:text="'Rhapsody'">Rhapsody</a></li>
+              <li><a class="dropdown-item" th:href="@{|/questions?keyword=Evangelism|}" th:text="'Evangelism'">Evangelism</a></li>
+              <li><a class="dropdown-item" th:href="@{|/questions?keyword=Diesel|}" th:text="'Diesel'">Diesel</a></li>
+            </ul>
+          </li>
+           <li class="nav-item">
+              <a class="nav-link" th:href="@{|/questions|}" th:text="'Records'">Records</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" th:href="@{|/evangelisms|}" th:text="'Seed'">Seed</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{|/image|}" th:text="'Event'">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{|/members|}" th:text="'Members'">Members</a>
+          </li>
+       
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Announcement
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+              <li><a class="dropdown-item" th:href="@{|/notes|}" th:text="'Leaders'">Leaders</a></li>
+              <li><a class="dropdown-item" th:href="@{|/publicnotes|}" th:text="'General'">General</a></li>
+            </ul>
+          </li>
+            <li class="nav-item">
+        <a class="nav-link active" th:href="@{/logout}">Logout</a>
+      </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+   
+   
+   
+   
+   
+   
+   
+        
+        
+  
+      
+        <div class="homeback">
+        	<h1>THE CHURCH</h1>
+        	<h3>Home For All</h3>
+        	<p>But you are a chosen generation, a Royal Priesthood, A Holy 
+        	Nation, His own special people, that you may proclaim the praises 
+        	of Him who called you out of darkness into His marvelous light<br>
+        	1 Peter 2:9</p>
+        </div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>       
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>

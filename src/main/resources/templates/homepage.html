@@ -1,0 +1,118 @@
+<!--homepage.html-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <meta charset="UTF-8">
+    <title>Church</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <style type="text/css">
+     
+     	body{
+     		
+     	}
+     	.navbar{
+     		
+     		
+     	}
+     	.navbar-brand{
+     		font-size: 200%;
+     		font-family: Times New Roman;
+     		color:white;
+     	}
+     	.nav-link{
+     		font-size:150%;
+     		color: white;
+     	}
+     	.nav-link{
+     		text-align: right;
+     	}
+     	body{
+    height: 100vh;
+    background-image:linear-gradient(hsla(233, 34%, 51%, 0.096), hsla(233, 34%, 51%, 0.096)),url('images/back6.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+	}
+	.homeback h1{
+	
+		color: white;
+		padding-top: 35vh;
+		font-size:700%;
+		text-align: center;
+	}
+	.homeback p{
+	background-color: hsla(233, 34%, 51%, 0.295);
+	background-size: absolute;
+	color: white;
+	text-align: center;
+	font-size:150%;
+	
+	}
+	.homeback h3{
+	background-color: hsla(233, 34%, 51%, 0.295);
+	color: white;
+	text-align: center;
+	font-size:300%;
+	font-weight: bold;
+	}
+	
+	
+     </style>    
+       
+</head>
+<body>
+        
+   <div sec:authorize="hasRole('ROLE_ANONYMOUS')">      
+        
+        <nav class="navbar">
+        <!-- Brand -->
+        <a class="navbar-brand" th:href="@{|/register|}" th:text="'THE CHURCH'">THE CHURCH</a>
+      
+      
+        <!-- Navbar links -->
+       
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/login|}" th:text="'Log in'">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/|}" th:text="'Home'">About Us</a>
+            </li>
+          </ul>
+      </nav>
+      
+      
+       <div class="homeback">
+        	<h1>THE CHURCH</h1>
+        	<h3>Home For All</h3>
+        	<p>But you are a chosen generation, a Royal Priesthood, A Holy <br>
+        	Nation, His own special people, that you may proclaim the praises<br> 
+        	of Him who called you out of darkness into His marvelous light<br>
+        	1 Peter 2:9</p>
+        	
+        </div>
+        
+	 
+	 
+  <p sec:authorize="hasRole('USER')">Text visible to user.</p>
+  <p sec:authorize="hasRole('ADMIN')">Text visible to admin.</p>
+  <p sec:authorize="hasRole('FELLOW')">Text visible to fellowship leaders.</p>
+  <p sec:authorize="isAuthenticated()">Text visible only to authenticated users.</p>
+
+
+  <div sec:authorize="isAuthenticated()">
+    <p>Logged as: <span sec:authentication="name"></span></p>
+    <p>Has role: <span sec:authentication="authorities"></span></p>
+    <p sec:authorize="hasAuthority('USER')"><a th:href="@{|/dashboard|}" th:text="'User Dashboard'"></a></p>
+    <p sec:authorize="hasAuthority('ADMIN')"><a th:href="@{|/admin/dashboard|}" th:text="'Admin Dashboard'"></a></p>
+     <p sec:authorize="hasAuthority('FELLOW')"><a th:href="@{|/fellow/dashboard|}" th:text="'Fellowship Leader Dashboard'"></a></p>
+    <a th:href="@{/logout}">Log out</a>
+  </div>
+  
+  </div>
+  
+  
+</body>
+</html>
